@@ -1,0 +1,3 @@
+//main UI contain 10 small panel. Each has a button show detail battery, small bar for progress and small text box for discharge done or not
+//click each button => show detail page
+//add function check infomation to the detail page of battery
