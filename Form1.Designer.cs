@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             voltageBar = new TrackBar();
             panel1 = new Panel();
             voltageLabel = new Label();
@@ -37,26 +38,30 @@
             ampereBar = new TrackBar();
             label4 = new Label();
             panel3 = new Panel();
+            statusS1 = new TextBox();
+            offS1 = new RadioButton();
+            onS1 = new RadioButton();
+            battery1 = new PictureBox();
             battery5 = new PictureBox();
+            battery2 = new PictureBox();
+            battery3 = new PictureBox();
             ampereS1 = new TextBox();
             voltageS1 = new TextBox();
+            battery4 = new PictureBox();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
-            battery4 = new PictureBox();
-            battery2 = new PictureBox();
-            battery3 = new PictureBox();
-            battery1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)voltageBar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ampereBar).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)battery1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)battery5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)battery4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)battery2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)battery3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)battery1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)battery4).BeginInit();
             SuspendLayout();
             // 
             // voltageBar
@@ -135,6 +140,10 @@
             // 
             // panel3
             // 
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(statusS1);
+            panel3.Controls.Add(offS1);
+            panel3.Controls.Add(onS1);
             panel3.Controls.Add(battery1);
             panel3.Controls.Add(battery5);
             panel3.Controls.Add(battery2);
@@ -147,18 +156,82 @@
             panel3.Controls.Add(label2);
             panel3.Location = new Point(21, 209);
             panel3.Name = "panel3";
-            panel3.Size = new Size(237, 390);
+            panel3.Size = new Size(237, 324);
             panel3.TabIndex = 3;
+            // 
+            // statusS1
+            // 
+            statusS1.BackColor = Color.White;
+            statusS1.Location = new Point(52, 224);
+            statusS1.Name = "statusS1";
+            statusS1.Size = new Size(126, 27);
+            statusS1.TabIndex = 6;
+            statusS1.Text = "OFF";
+            statusS1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // offS1
+            // 
+            offS1.AutoSize = true;
+            offS1.Location = new Point(123, 272);
+            offS1.Name = "offS1";
+            offS1.Size = new Size(55, 24);
+            offS1.TabIndex = 11;
+            offS1.TabStop = true;
+            offS1.Text = "OFF";
+            offS1.UseVisualStyleBackColor = true;
+            offS1.CheckedChanged += offS1_CheckedChanged;
+            // 
+            // onS1
+            // 
+            onS1.AutoSize = true;
+            onS1.Location = new Point(54, 272);
+            onS1.Name = "onS1";
+            onS1.Size = new Size(52, 24);
+            onS1.TabIndex = 4;
+            onS1.TabStop = true;
+            onS1.Text = "ON";
+            onS1.UseVisualStyleBackColor = true;
+            onS1.CheckedChanged += onOffS1_CheckedChanged;
+            // 
+            // battery1
+            // 
+            battery1.Image = Properties.Resources.battery_5;
+            battery1.Location = new Point(56, 145);
+            battery1.Name = "battery1";
+            battery1.Size = new Size(125, 62);
+            battery1.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery1.TabIndex = 10;
+            battery1.TabStop = false;
             // 
             // battery5
             // 
             battery5.Image = Properties.Resources.battery_1_full;
-            battery5.Location = new Point(56, 159);
+            battery5.Location = new Point(56, 145);
             battery5.Name = "battery5";
             battery5.Size = new Size(125, 62);
             battery5.SizeMode = PictureBoxSizeMode.StretchImage;
             battery5.TabIndex = 6;
             battery5.TabStop = false;
+            // 
+            // battery2
+            // 
+            battery2.Image = Properties.Resources.battery_4;
+            battery2.Location = new Point(56, 145);
+            battery2.Name = "battery2";
+            battery2.Size = new Size(125, 62);
+            battery2.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery2.TabIndex = 8;
+            battery2.TabStop = false;
+            // 
+            // battery3
+            // 
+            battery3.Image = Properties.Resources.battery_3;
+            battery3.Location = new Point(56, 145);
+            battery3.Name = "battery3";
+            battery3.Size = new Size(125, 62);
+            battery3.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery3.TabIndex = 9;
+            battery3.TabStop = false;
             // 
             // ampereS1
             // 
@@ -173,6 +246,16 @@
             voltageS1.Name = "voltageS1";
             voltageS1.Size = new Size(68, 27);
             voltageS1.TabIndex = 4;
+            // 
+            // battery4
+            // 
+            battery4.Image = Properties.Resources.battery_2;
+            battery4.Location = new Point(56, 145);
+            battery4.Name = "battery4";
+            battery4.Size = new Size(125, 62);
+            battery4.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery4.TabIndex = 7;
+            battery4.TabStop = false;
             // 
             // label5
             // 
@@ -201,45 +284,10 @@
             label2.TabIndex = 1;
             label2.Text = "Station 1";
             // 
-            // battery4
+            // timer1
             // 
-            battery4.Image = Properties.Resources.battery_2;
-            battery4.Location = new Point(56, 159);
-            battery4.Name = "battery4";
-            battery4.Size = new Size(125, 62);
-            battery4.SizeMode = PictureBoxSizeMode.StretchImage;
-            battery4.TabIndex = 7;
-            battery4.TabStop = false;
-            // 
-            // battery2
-            // 
-            battery2.Image = Properties.Resources.battery_4;
-            battery2.Location = new Point(56, 159);
-            battery2.Name = "battery2";
-            battery2.Size = new Size(125, 62);
-            battery2.SizeMode = PictureBoxSizeMode.StretchImage;
-            battery2.TabIndex = 8;
-            battery2.TabStop = false;
-            // 
-            // battery3
-            // 
-            battery3.Image = Properties.Resources.battery_3;
-            battery3.Location = new Point(56, 159);
-            battery3.Name = "battery3";
-            battery3.Size = new Size(125, 62);
-            battery3.SizeMode = PictureBoxSizeMode.StretchImage;
-            battery3.TabIndex = 9;
-            battery3.TabStop = false;
-            // 
-            // battery1
-            // 
-            battery1.Image = Properties.Resources.battery_5;
-            battery1.Location = new Point(56, 159);
-            battery1.Name = "battery1";
-            battery1.Size = new Size(125, 62);
-            battery1.SizeMode = PictureBoxSizeMode.StretchImage;
-            battery1.TabIndex = 10;
-            battery1.TabStop = false;
+            timer1.Interval = 10;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -259,11 +307,11 @@
             ((System.ComponentModel.ISupportInitialize)ampereBar).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)battery1).EndInit();
             ((System.ComponentModel.ISupportInitialize)battery5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)battery4).EndInit();
             ((System.ComponentModel.ISupportInitialize)battery2).EndInit();
             ((System.ComponentModel.ISupportInitialize)battery3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)battery1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)battery4).EndInit();
             ResumeLayout(false);
         }
 
@@ -288,5 +336,9 @@
         private PictureBox battery2;
         private PictureBox battery3;
         private PictureBox battery1;
+        private RadioButton onS1;
+        private System.Windows.Forms.Timer timer1;
+        private RadioButton offS1;
+        private TextBox statusS1;
     }
 }
