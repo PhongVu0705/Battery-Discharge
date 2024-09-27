@@ -37,16 +37,26 @@
             ampereBar = new TrackBar();
             label4 = new Label();
             panel3 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
+            battery5 = new PictureBox();
+            ampereS1 = new TextBox();
+            voltageS1 = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            battery4 = new PictureBox();
+            battery2 = new PictureBox();
+            battery3 = new PictureBox();
+            battery1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)voltageBar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ampereBar).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)battery5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)battery4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)battery2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)battery3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)battery1).BeginInit();
             SuspendLayout();
             // 
             // voltageBar
@@ -125,8 +135,13 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(textBox2);
-            panel3.Controls.Add(textBox1);
+            panel3.Controls.Add(battery1);
+            panel3.Controls.Add(battery5);
+            panel3.Controls.Add(battery2);
+            panel3.Controls.Add(battery3);
+            panel3.Controls.Add(ampereS1);
+            panel3.Controls.Add(voltageS1);
+            panel3.Controls.Add(battery4);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
@@ -135,23 +150,29 @@
             panel3.Size = new Size(237, 390);
             panel3.TabIndex = 3;
             // 
-            // label2
+            // battery5
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(82, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Station 1";
+            battery5.Image = Properties.Resources.battery_1_full;
+            battery5.Location = new Point(56, 159);
+            battery5.Name = "battery5";
+            battery5.Size = new Size(125, 62);
+            battery5.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery5.TabIndex = 6;
+            battery5.TabStop = false;
             // 
-            // label3
+            // ampereS1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(30, 59);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Voltage";
+            ampereS1.Location = new Point(123, 98);
+            ampereS1.Name = "ampereS1";
+            ampereS1.Size = new Size(68, 27);
+            ampereS1.TabIndex = 5;
+            // 
+            // voltageS1
+            // 
+            voltageS1.Location = new Point(123, 56);
+            voltageS1.Name = "voltageS1";
+            voltageS1.Size = new Size(68, 27);
+            voltageS1.TabIndex = 4;
             // 
             // label5
             // 
@@ -162,28 +183,72 @@
             label5.TabIndex = 3;
             label5.Text = "Ampere";
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Location = new Point(123, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(68, 27);
-            textBox1.TabIndex = 4;
+            label3.AutoSize = true;
+            label3.Location = new Point(30, 59);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Voltage";
             // 
-            // textBox2
+            // label2
             // 
-            textBox2.Location = new Point(123, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(68, 27);
-            textBox2.TabIndex = 5;
+            label2.AutoSize = true;
+            label2.Location = new Point(82, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Station 1";
+            // 
+            // battery4
+            // 
+            battery4.Image = Properties.Resources.battery_2;
+            battery4.Location = new Point(56, 159);
+            battery4.Name = "battery4";
+            battery4.Size = new Size(125, 62);
+            battery4.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery4.TabIndex = 7;
+            battery4.TabStop = false;
+            // 
+            // battery2
+            // 
+            battery2.Image = Properties.Resources.battery_4;
+            battery2.Location = new Point(56, 159);
+            battery2.Name = "battery2";
+            battery2.Size = new Size(125, 62);
+            battery2.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery2.TabIndex = 8;
+            battery2.TabStop = false;
+            // 
+            // battery3
+            // 
+            battery3.Image = Properties.Resources.battery_3;
+            battery3.Location = new Point(56, 159);
+            battery3.Name = "battery3";
+            battery3.Size = new Size(125, 62);
+            battery3.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery3.TabIndex = 9;
+            battery3.TabStop = false;
+            // 
+            // battery1
+            // 
+            battery1.Image = Properties.Resources.battery_5;
+            battery1.Location = new Point(56, 159);
+            battery1.Name = "battery1";
+            battery1.Size = new Size(125, 62);
+            battery1.SizeMode = PictureBoxSizeMode.StretchImage;
+            battery1.TabIndex = 10;
+            battery1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1157, 652);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel3);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)voltageBar).EndInit();
@@ -194,6 +259,11 @@
             ((System.ComponentModel.ISupportInitialize)ampereBar).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)battery5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)battery4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)battery2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)battery3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)battery1).EndInit();
             ResumeLayout(false);
         }
 
@@ -208,10 +278,15 @@
         private TrackBar ampereBar;
         private Label label4;
         private Panel panel3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox ampereS1;
+        private TextBox voltageS1;
         private Label label5;
         private Label label3;
         private Label label2;
+        private PictureBox battery5;
+        private PictureBox battery4;
+        private PictureBox battery2;
+        private PictureBox battery3;
+        private PictureBox battery1;
     }
 }
