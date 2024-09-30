@@ -52,6 +52,7 @@
             label3 = new Label();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            progressS1 = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)voltageBar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -191,7 +192,7 @@
             onS1.TabStop = true;
             onS1.Text = "ON";
             onS1.UseVisualStyleBackColor = true;
-            onS1.CheckedChanged += onOffS1_CheckedChanged;
+            onS1.CheckedChanged += onS1_CheckedChanged;
             // 
             // battery1
             // 
@@ -289,11 +290,20 @@
             timer1.Interval = 10;
             timer1.Tick += timer1_Tick;
             // 
+            // progressS1
+            // 
+            progressS1.Location = new Point(302, 375);
+            progressS1.Maximum = 10;
+            progressS1.Name = "progressS1";
+            progressS1.Size = new Size(161, 29);
+            progressS1.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1157, 652);
+            Controls.Add(progressS1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
@@ -340,5 +350,6 @@
         private System.Windows.Forms.Timer timer1;
         private RadioButton offS1;
         private TextBox statusS1;
+        private ProgressBar progressS1;
     }
 }
