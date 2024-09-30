@@ -83,7 +83,7 @@ namespace BatteryDischargeDemo2
         {
             timer1.Start();
         }
-        //thoi gian lay may 10ms
+        ////thoi gian lay may 10ms
         private void timer1_Tick(object sender, EventArgs e)
         {
             voltageS1.Text = voltageValue.ToString();
