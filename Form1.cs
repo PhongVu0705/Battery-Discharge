@@ -16,6 +16,9 @@ namespace BatteryDischargeDemo2
         {
             InitializeComponent();
             //khoi tao tram
+            for (int i = 0; i < 10; i++) { 
+                station[i] = new DischargeStation();
+            }
         }
         //mo phong nguon vao
         private void voltageBar_Scroll(object sender, EventArgs e)
